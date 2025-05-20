@@ -3,7 +3,7 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - main  # Change to your target branch
+      - main  # Change if your branch is different
 
 jobs:
   build-and-push:
@@ -22,12 +22,16 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
+      - name: Docker login test
+        run: docker info
+
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
           context: .
           push: true
           tags: sunil7075/webpage:latest
+
 
 
 
