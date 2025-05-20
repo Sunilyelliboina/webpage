@@ -3,9 +3,6 @@ name: Build and Push Docker Image to Docker Hub
 on:
   push:
     branches:
-      - main
-      - sunil
-      - sai
 
 jobs:
   build:
