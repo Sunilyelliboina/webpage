@@ -3,6 +3,9 @@ name: Build and Push Docker Image to Docker Hub
 on:
   push:
     branches:
+      - main
+      - sunil
+      - sai
 
 jobs:
   build:
@@ -29,3 +32,4 @@ jobs:
           tags: |
             sunil7075/webpage:${{ github.ref_name }}
             sunil7075/webpage:latest
+
